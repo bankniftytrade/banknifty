@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bank Nifty Options</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    .logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .telegram-button {
+      display: inline-block;
+      background-color: #28d160;
+      color: #fff;
+      padding: 15px 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .telegram-button i {
+      margin-right: 8px;
+    }
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    .highlight-yellow {
+      color: yellow;
+      font-weight: bold;
+    }
+    .countdown {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .countdown span {
+      display: inline-block;
+      margin: 0 5px;
+    }
+    .subtext {
+      margin: 10px 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    li:before {
+      content: '\2714';
+      color: #28d160;
+      margin-right: 10px;
+    }
+    .insta-image {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+  </style>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); // Replace with your pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+</head>
+<body>
+  <img src="https://i.postimg.cc/W4q7KLtH/bankniftyoptionslogo-removebg-preview.png" alt="Logo" class="logo" />
+  <h1>Bank Nifty Options</h1>
+  <a class="telegram-button" href="https://t.me/bankniftysure23" target="_blank">
+    <i class="fab fa-telegram-plane"></i> JOIN TELEGRAM CHANNEL
+  </a>
+  <div class="highlight">5+ Years of Experience</div>
+  <div class="highlight-yellow">10+ Active Traders</div>
+  <div class="countdown" id="countdown"></div>
+  <div class="subtext">Join our free telegram channels for daily signals</div>
+  <ul>
+    <li><strong>5+ Years of Experience in Bank Nifty and Stock Market</strong></li>
+    <li><strong>Sure Shots Calls and Put Signals Daily</strong></li>
+    <li><strong>90% Accuracy on Every Signals</strong></li>
+  </ul>
+  <img class="insta-image" src="https://i.postimg.cc/SQdcgNDK/Bank-Nifty-Trading-Success-Hub.png" alt="Instagram preview">
+  <script>
+    function startCountdown(durationSeconds) {
+      let countdownElement = document.getElementById('countdown');
+      let target = new Date().getTime() + durationSeconds * 1000;
+
+      function update() {
+        let now = new Date().getTime();
+        let distance = target - now;
+        if (distance < 0) distance = 0;
+
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `
+          <span>${String(days).padStart(2, '0')}</span> :
+          <span>${String(hours).padStart(2, '0')}</span> :
+          <span>${String(minutes).padStart(2, '0')}</span> :
+          <span>${String(seconds).padStart(2, '0')}</span><br>
+          <span style="color: green; font-size: 14px;">DAYS &nbsp;&nbsp; HOURS &nbsp;&nbsp; MINUTES &nbsp;&nbsp; SECONDS</span>
+        `;
+
+        if (distance > 0) {
+          setTimeout(update, 1000);
+        }
+      }
+      update();
+    }
+
+    // Start countdown for 10 days (in seconds)
+    startCountdown(10 * 24 * 60 * 60);
+  </script>
+</body>
+</html>
