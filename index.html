@@ -130,9 +130,10 @@
   <div class="container">
     <img src="https://i.postimg.cc/43Jbw7VB/banknifty-2.png" alt="Logo" class="logo" />
     <h1>Bank Nifty Options</h1>
-    <a class="telegram-button" id="joinBtn" href="https://t.me/bankniftysure23">
-      <i class="fab fa-telegram-plane"></i> JOIN TELEGRAM CHANNEL
-    </a>
+   <a class="telegram-button" href="#" onclick="trackAndRedirect(event)">
+  <i class="fab fa-telegram-plane"></i> JOIN TELEGRAM CHANNEL
+</a>
+
     <img class="insta-image" src="https://i.postimg.cc/ZnDMzPFb/Bank-Nifty.jpg" alt="Instagram preview">
 
     <div class="highlight">5+ Years of Experience</div>
@@ -147,43 +148,49 @@
   </div>
 
   <script>
-    // ✅ Countdown Timer Script
-    function startCountdown(durationSeconds) {
-      let countdownElement = document.getElementById('countdown');
-      let target = new Date().getTime() + durationSeconds * 1000;
+  // ✅ Countdown Timer Script
+  function startCountdown(durationSeconds) {
+    let countdownElement = document.getElementById('countdown');
+    let target = new Date().getTime() + durationSeconds * 1000;
 
-      function update() {
-        let now = new Date().getTime();
-        let distance = target - now;
-        if (distance < 0) distance = 0;
+    function update() {
+      let now = new Date().getTime();
+      let distance = target - now;
+      if (distance < 0) distance = 0;
 
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = `
-          <span>${String(days).padStart(2, '0')}</span> :
-          <span>${String(hours).padStart(2, '0')}</span> :
-          <span>${String(minutes).padStart(2, '0')}</span> :
-          <span>${String(seconds).padStart(2, '0')}</span><br>
-          <span style="color: green; font-size: 14px;">DAYS &nbsp;&nbsp; HOURS &nbsp;&nbsp; MINUTES &nbsp;&nbsp; SECONDS</span>
-        `;
+      countdownElement.innerHTML = `
+        <span>${String(days).padStart(2, '0')}</span> :
+        <span>${String(hours).padStart(2, '0')}</span> :
+        <span>${String(minutes).padStart(2, '0')}</span> :
+        <span>${String(seconds).padStart(2, '0')}</span><br>
+        <span style="color: green; font-size: 14px;">DAYS &nbsp;&nbsp; HOURS &nbsp;&nbsp; MINUTES &nbsp;&nbsp; SECONDS</span>
+      `;
 
-        if (distance > 0) {
-          setTimeout(update, 1000);
-        }
+      if (distance > 0) {
+        setTimeout(update, 1000);
       }
-      update();
     }
+    update();
+  }
 
-    // ⏳ Start countdown for 10 days (in seconds)
-    startCountdown(10 * 24 * 60 * 60);
+  // ⏳ Start countdown for 10 days (in seconds)
+  startCountdown(10 * 24 * 60 * 60);
 
-    // ✅ Facebook Pixel Track Lead on Telegram Click
-    document.getElementById('joinBtn').addEventListener('click', function() {
-      fbq('track', 'Lead');
-    });
-  </script>
+  // ✅ Telegram click handler with Facebook Pixel
+  function trackAndRedirect(e) {
+    e.preventDefault(); // stop default link behavior
+    fbq('track', 'Lead'); // send Facebook event
+    setTimeout(() => {
+      window.location.href = 'https://t.me/bankniftysure23'; // your Telegram link
+    }, 300); // delay for tracking to complete
+  }
+</script>
+
+
 </body>
 </html>
